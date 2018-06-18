@@ -1,0 +1,171 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://levels/Controls.gd" type="Script" id=1]
+[ext_resource path="res://assets/meshes/Placard.obj" type="ArrayMesh" id=2]
+
+[sub_resource type="CubeMesh" id=1]
+
+custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
+size = Vector3( 2, 53, 18 )
+subdivide_width = 0
+subdivide_height = 0
+subdivide_depth = 0
+
+[sub_resource type="ConvexPolygonShape" id=2]
+
+points = PoolVector3Array( 0.710938, 0, 1.09961, 0.710938, 0, 0.90918, -0.72998, 0, 1.09961, -0.72998, 0, -1.09961, 0.710938, 0, -1.09961, 0.710938, 0, -0.917969, -0.530273, 0, -0.917969, -0.530273, 0, 0.90918, -0.72998, 3, -1.09961, 0.710938, 3, -1.09961, -0.72998, 3, 1.09961, 0.710938, 3, 1.09961, 0.710938, 3, -1.09961, 0.710938, 0, -1.09961, 0.710938, 2.72852, -0.917969, 0.710938, 0, -0.917969, 0.710938, 3, 1.09961, 0.710938, 0, 1.09961, -0.72998, 3, 1.09961, -0.72998, 0, 1.09961, -0.72998, 3, 1.09961, -0.72998, 0, 1.09961, -0.72998, 3, -1.09961, -0.72998, 0, -1.09961, 0.710938, 0, -1.09961, 0.710938, 3, -1.09961, -0.72998, 0, -1.09961, -0.72998, 3, -1.09961, 0.710938, 2.72852, 0.90918, 0.710938, 2.72852, -0.917969, -0.530273, 2.72852, 0.90918, -0.530273, 2.72852, -0.917969, 0.710938, 3, 1.09961, 0.710938, 2.72852, 0.90918, 0.710938, 0, 1.09961, 0.710938, 0, 0.90918, -0.530273, 2.72852, -0.917969, -0.530273, 0, -0.917969, -0.530273, 2.72852, 0.90918, -0.530273, 0, 0.90918, 0.710938, 2.72852, -0.917969, 0.710938, 0, -0.917969, -0.530273, 2.72852, -0.917969, -0.530273, 0, -0.917969, 0.710938, 0, 0.90918, 0.710938, 2.72852, 0.90918, -0.530273, 0, 0.90918, -0.530273, 2.72852, 0.90918 )
+
+[sub_resource type="Animation" id=3]
+
+resource_name = "touch"
+length = 0.5
+loop = false
+step = 0.1
+tracks/0/type = "value"
+tracks/0/path = NodePath("Door:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( -0.000433648, 0.960463, -0.000841828 ), Vector3( 0.09309, -111.988, 0.0102365 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("DoorRight:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0.000627444, -1.3384, 0.00116061 ), Vector3( 0.0320819, 99.2381, -0.0798528 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CollisionShape:translation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector3( -23.3669, -25.9635, 0.319801 ), Vector3( -52.0191, -25.9722, 5.43855 ) ]
+}
+
+[node name="Cupboard" type="RigidBody" index="0"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+mode = 1
+mass = 1.0
+friction = 1.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = false
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = true
+axis_lock_linear_x = false
+axis_lock_linear_y = false
+axis_lock_linear_z = false
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+linear_velocity = Vector3( 0, 0, 0 )
+linear_damp = -1.0
+angular_velocity = Vector3( 0, 0, 0 )
+angular_damp = -1.0
+script = ExtResource( 1 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+text = null
+
+[node name="Door" type="Spatial" parent="." index="0"]
+
+transform = Transform( 0.999859, 1.45637e-05, 0.0167624, -1.46927e-05, 1, 7.56858e-06, -0.0167625, -7.81382e-06, 0.999858, -10.1653, 2.24168, 18.5581 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Door" type="MeshInstance" parent="Door" index="0"]
+
+transform = Transform( 1, 5.82077e-11, -8.9407e-08, -1.16415e-10, 1, 0, -1.78814e-07, 2.32831e-10, 1, -0.753998, -0.00822449, -8.93753 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 1 )
+skeleton = NodePath("..")
+material/0 = null
+_sections_unfolded = [ "Transform" ]
+
+[node name="DoorRight" type="Spatial" parent="." index="1"]
+
+transform = Transform( 0.999727, -2.05066e-05, -0.0233573, 2.02564e-05, 1, -1.0951e-05, 0.0233573, 1.04748e-05, 0.999726, -12.955, 2.20808, -18.492 )
+_sections_unfolded = [ "Transform" ]
+
+[node name="Door" type="MeshInstance" parent="DoorRight" index="0"]
+
+transform = Transform( 1, 1.30967e-10, -5.96046e-08, -2.32831e-10, 1, 1.16415e-10, -1.49012e-07, 2.32831e-10, 1, 2.24857, 0.0093689, 9.66568 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 1 )
+skeleton = NodePath("..")
+material/0 = null
+_sections_unfolded = [ "Transform" ]
+
+[node name="Cupboard" type="MeshInstance" parent="." index="2"]
+
+transform = Transform( 20, 1.86265e-09, 9.53674e-07, -3.0268e-09, 20, 0, -2.38419e-07, 0, 20, -25.2609, -25.6173, 0.822773 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = ExtResource( 2 )
+skeleton = NodePath("..")
+material/0 = null
+_sections_unfolded = [ "Transform" ]
+
+[node name="CollisionShape" type="CollisionShape" parent="." index="3"]
+
+transform = Transform( 19, 2.468e-08, 7.15256e-07, -2.44472e-08, 19, -5.02914e-08, -4.76837e-07, -9.31323e-09, 19, -23.3669, -25.9635, 0.319801 )
+shape = SubResource( 2 )
+disabled = false
+_sections_unfolded = [ "Transform" ]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="4"]
+
+root_node = NodePath("..")
+autoplay = ""
+playback_process_mode = 1
+playback_default_blend_time = 0.0
+playback_speed = 1.0
+anims/touch = SubResource( 3 )
+blend_times = [  ]
+
+

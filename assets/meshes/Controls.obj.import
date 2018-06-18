@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Controls.obj-5f176930014d5f4cada625645dc6e42b.mesh"
+
+[deps]
+
+files=[ "res://.import/Controls.obj-5f176930014d5f4cada625645dc6e42b.mesh" ]
+
+source_file="res://assets/meshes/Controls.obj"
+dest_files=[ "res://.import/Controls.obj-5f176930014d5f4cada625645dc6e42b.mesh", "res://.import/Controls.obj-5f176930014d5f4cada625645dc6e42b.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )

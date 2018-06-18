@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Ice.obj-3618569b23036b12a47c71a128341858.mesh"
+
+[deps]
+
+files=[ "res://.import/Ice.obj-3618569b23036b12a47c71a128341858.mesh" ]
+
+source_file="res://assets/meshes/Ice.obj"
+dest_files=[ "res://.import/Ice.obj-3618569b23036b12a47c71a128341858.mesh", "res://.import/Ice.obj-3618569b23036b12a47c71a128341858.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )

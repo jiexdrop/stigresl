@@ -1,0 +1,59 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[ext_resource path="res://assets/materials/water_shader.shader" type="Shader" id=1]
+
+[resource]
+
+render_priority = 0
+shader = ExtResource( 1 )
+shader_param/albedo = Color( 0, 0.8526, 0.894531, 1 )
+shader_param/albedo_wave_enabled = false
+shader_param/foam_enabled = null
+shader_param/shore_enabled = null
+shader_param/refraction_enabled = null
+shader_param/refraction = null
+shader_param/refraction_texture_channel = null
+shader_param/refraction_opacity = null
+shader_param/distance_fade_enabled = null
+shader_param/distance_fade_min = null
+shader_param/distance_fade_max = null
+shader_param/specular = null
+shader_param/roughness = null
+shader_param/metallic = null
+shader_param/world_triplanar = null
+shader_param/uv_blend_sharpness = null
+shader_param/uv_tri_scale = null
+shader_param/uv_tri_offset = null
+shader_param/vertex_waves_enabled = null
+shader_param/vertex_displace_from_mesh_normal = null
+shader_param/normal_displace_from_mesh_normal = null
+shader_param/debug_time_invariant = null
+shader_param/Steepness1 = null
+shader_param/Amplitude1 = null
+shader_param/Direction1 = null
+shader_param/Frequency1 = null
+shader_param/Speed1 = null
+shader_param/Steepness2 = null
+shader_param/Amplitude2 = null
+shader_param/Direction2 = null
+shader_param/Frequency2 = null
+shader_param/Speed2 = null
+shader_param/Steepness3 = null
+shader_param/Amplitude3 = null
+shader_param/Direction3 = null
+shader_param/Frequency3 = null
+shader_param/Speed3 = null
+shader_param/Steepness4 = null
+shader_param/Amplitude4 = null
+shader_param/Direction4 = null
+shader_param/Frequency4 = null
+shader_param/Speed4 = null
+shader_param/Steepness5 = null
+shader_param/Amplitude5 = null
+shader_param/Direction5 = null
+shader_param/Frequency5 = null
+shader_param/Speed5 = null
+shader_param/near = null
+shader_param/far = null
+_sections_unfolded = [ "shader_param" ]
+

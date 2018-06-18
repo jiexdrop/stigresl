@@ -1,0 +1,17 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Placard.obj-7c0345e1ac46999eedcd90d784bd9f4f.mesh"
+
+[deps]
+
+files=[ "res://.import/Placard.obj-7c0345e1ac46999eedcd90d784bd9f4f.mesh" ]
+
+source_file="res://assets/meshes/Placard.obj"
+dest_files=[ "res://.import/Placard.obj-7c0345e1ac46999eedcd90d784bd9f4f.mesh", "res://.import/Placard.obj-7c0345e1ac46999eedcd90d784bd9f4f.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
