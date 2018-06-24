@@ -1,20 +1,36 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/TextButton.tscn" type="PackedScene" id=1]
-[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/Stairs.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/Cube.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=4]
 
+[sub_resource type="SphereMesh" id=1]
 
-[sub_resource type="PlaneMesh" id=1]
+custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
+radius = 4.0
+height = 8.0
+radial_segments = 64
+rings = 32
+is_hemisphere = false
 
-size = Vector2( 64, 64 )
+[sub_resource type="SphereShape" id=2]
+
+radius = 4.0
+
+[sub_resource type="CubeMesh" id=3]
+
+custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
+size = Vector3( 128, 8, 128 )
 subdivide_width = 0
+subdivide_height = 0
 subdivide_depth = 0
 
-[sub_resource type="ConvexPolygonShape" id=2]
+[sub_resource type="BoxShape" id=4]
 
-points = PoolVector3Array( 32, 0, 32, -32, 0, 32, 32, 0, -32, -32, 0, -32 )
+extents = Vector3( 64, 4, 64 )
 
-[sub_resource type="Environment" id=3]
+[sub_resource type="Environment" id=5]
 
 background_mode = 0
 background_sky_custom_fov = 0.0
@@ -92,21 +108,45 @@ adjustment_brightness = 1.0
 adjustment_contrast = 1.0
 adjustment_saturation = 1.0
 
-[node name="Tutorial" type="Spatial"]
+[node name="Tutorial" type="Spatial" index="0"]
 
 [node name="Button" parent="." index="0" instance=ExtResource( 1 )]
 
-transform = Transform( 0.698671, -0.000303813, -0.715442, -0.000458736, 1, -0.000872632, 0.715442, 0.000937882, 0.698671, 31.5676, -7.83787, 31.3094 )
+transform = Transform( 0.698671, -0.000303813, -0.715442, -0.000458736, 1, -0.000872632, 0.715442, 0.000937882, 0.698671, 32.1679, 0, 0 )
 text = "The end"
 
-[node name="Button2" parent="." index="1" instance=ExtResource( 1 )]
+[node name="Ball" type="RigidBody" parent="." index="1"]
 
-transform = Transform( -0.653815, -0.000960209, -0.756654, -0.000458736, 1, -0.000872632, 0.756654, -0.000223436, -0.653815, -31.6693, -7.83787, 31.3094 )
-text = "Thanks for playing"
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -30.072, 23.0013, 45.3657 )
+input_ray_pickable = true
+input_capture_on_drag = false
+collision_layer = 1
+collision_mask = 1
+mode = 0
+mass = 0.1
+friction = 0.0
+bounce = 0.0
+gravity_scale = 1.0
+custom_integrator = false
+continuous_cd = false
+contacts_reported = 0
+contact_monitor = false
+sleeping = false
+can_sleep = false
+axis_lock_linear_x = false
+axis_lock_linear_y = false
+axis_lock_linear_z = false
+axis_lock_angular_x = false
+axis_lock_angular_y = false
+axis_lock_angular_z = false
+linear_velocity = Vector3( 0, 0, 0 )
+linear_damp = 0.8
+angular_velocity = Vector3( 0, 0, 0 )
+angular_damp = 0.8
+_sections_unfolded = [ "Angular", "Axis Lock", "Linear" ]
 
-[node name="MeshInstance" type="MeshInstance" parent="." index="2"]
+[node name="MeshInstance2" type="MeshInstance" parent="Ball" index="0"]
 
-transform = Transform( 1, 0, 0, 0, 0.999957, 0.00924298, 0, -0.00924298, 0.999957, -0.912792, -7.50763, -0.851372 )
 layers = 1
 material_override = null
 cast_shadow = 1
@@ -120,7 +160,36 @@ mesh = SubResource( 1 )
 skeleton = NodePath("..")
 material/0 = null
 
-[node name="StaticBody" type="StaticBody" parent="MeshInstance" index="0"]
+[node name="CollisionShape" type="CollisionShape" parent="Ball" index="1"]
+
+shape = SubResource( 2 )
+disabled = false
+
+[node name="Cubes" type="Spatial" parent="." index="2"]
+
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.95393, 0 )
+
+[node name="Stairs" parent="." index="3" instance=ExtResource( 2 )]
+
+transform = Transform( -17.3339, 5.00386, 6.62161, 12, 10.3923, 0, -11.469, 3.31081, -10.0077, -27.8346, 17.6513, 0 )
+
+[node name="Floor" type="MeshInstance" parent="." index="4"]
+
+transform = Transform( 1, 0, 0, 0, 0.999957, 0.00924298, 0, -0.00924298, 0.999957, 0, 0, 0 )
+layers = 1
+material_override = null
+cast_shadow = 1
+extra_cull_margin = 0.0
+use_in_baked_light = false
+lod_min_distance = 0.0
+lod_min_hysteresis = 0.0
+lod_max_distance = 0.0
+lod_max_hysteresis = 0.0
+mesh = SubResource( 3 )
+skeleton = NodePath("..")
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="Floor" index="0"]
 
 input_ray_pickable = true
 input_capture_on_drag = false
@@ -131,22 +200,22 @@ bounce = 0.0
 constant_linear_velocity = Vector3( 0, 0, 0 )
 constant_angular_velocity = Vector3( 0, 0, 0 )
 
-[node name="CollisionShape" type="CollisionShape" parent="MeshInstance/StaticBody" index="0"]
+[node name="CollisionShape" type="CollisionShape" parent="Floor/StaticBody" index="0"]
 
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 7.45058e-09 )
-shape = SubResource( 2 )
+shape = SubResource( 4 )
 disabled = false
 
-[node name="Player" parent="." index="3" instance=ExtResource( 2 )]
+[node name="Cube" parent="." index="5" instance=ExtResource( 3 )]
 
-transform = Transform( 1, 0, 0, 0, 0.999957, 0.00924298, 0, -0.00924298, 0.999957, -0.912792, 7.20072, -0.851372 )
-_sections_unfolded = [ "Axis Lock", "Collision", "Pause", "Transform", "Visibility" ]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 18.6624, 36.0761 )
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="4"]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="6"]
 
-environment = SubResource( 3 )
+environment = SubResource( 5 )
 
-[node name="DirectionalLight" type="DirectionalLight" parent="." index="5"]
+[node name="Player" parent="." index="7" instance=ExtResource( 4 )]
+
+[node name="DirectionalLight" type="DirectionalLight" parent="." index="8"]
 
 transform = Transform( 0.992748, 0, 0.120211, -0.0437784, 0.931329, 0.361539, -0.111956, -0.36418, 0.924575, 0, 100.426, 0 )
 layers = 1

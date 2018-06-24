@@ -2,6 +2,8 @@ extends KinematicBody
 
 # http://docs.godotengine.org/en/3.0/tutorials/3d/fps_tutorial/part_one.html
 
+export (String, FILE) var menu
+
 const GRAVITY = -120
 var vel = Vector3()
 const MAX_SPEED = 30
@@ -23,6 +25,8 @@ var over
 var label
 var timer
 
+var global
+
 var start_position
 
 var MOUSE_SENSITIVITY = 0.05
@@ -30,6 +34,7 @@ var MOUSE_SENSITIVITY = 0.05
 const MAX_SPRINT_SPEED = 50
 const SPRINT_ACCEL = 22
 var is_sprinting = false
+
 
 
 func _ready():
@@ -41,11 +46,15 @@ func _ready():
 	label = $Control/Label
 	timer = $Timer
 	
+	global = get_node("/root/Global")
+	
 	$Control/VBoxContainer/Continue.connect("pressed", self, "button_pressed", ["continue"])
 	$Control/VBoxContainer/Menu.connect("pressed", self, "button_pressed", ["menu"])
 	$Control/VBoxContainer/Quit.connect("pressed", self, "button_pressed", ["quit"])
 	
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	
+	add_collision_exception_with($RigidBody)
 
 func _physics_process(delta):
 	process_input(delta)
@@ -113,7 +122,7 @@ func button_pressed(button_name):
 		$Control/VBoxContainer.set_visible(false)
 	elif button_name == "menu":
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		get_tree().change_scene("res://Main_Menu.tscn")
+		global.goto_scene(menu)
 	elif button_name == "quit":
 		get_tree().quit()
 
@@ -177,8 +186,8 @@ func process_movement(delta):
 			accel = ACCEL
 	else:
 		accel = DEACCEL
-		
 
+	
 	hvel = hvel.linear_interpolate(target, accel*delta)
 	vel.x = hvel.x
 	vel.z = hvel.z

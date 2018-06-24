@@ -1,18 +1,18 @@
 [gd_scene load_steps=7 format=2]
 
-[ext_resource path="res://Water.gd" type="Script" id=1]
+[ext_resource path="res://scripts/Water.gd" type="Script" id=1]
 [ext_resource path="res://assets/materials/Ice.tres" type="Material" id=2]
 [ext_resource path="res://assets/materials/WaterShaderMaterial.tres" type="Material" id=3]
 
 [sub_resource type="BoxShape" id=1]
 
-extents = Vector3( 180, 4, 180 )
+extents = Vector3( 256, 4, 256 )
 
 [sub_resource type="CubeMesh" id=2]
 
 material = ExtResource( 2 )
 custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
-size = Vector3( 360, 4, 360 )
+size = Vector3( 512, 4, 512 )
 subdivide_width = 0
 subdivide_height = 0
 subdivide_depth = 0
@@ -21,7 +21,7 @@ subdivide_depth = 0
 
 material = ExtResource( 3 )
 custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
-size = Vector2( 364, 364 )
+size = Vector2( 512, 512 )
 subdivide_width = 0
 subdivide_depth = 0
 

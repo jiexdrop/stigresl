@@ -1,26 +1,26 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=26 format=2]
 
-[ext_resource path="res://Player.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/meshes/Level.obj" type="ArrayMesh" id=2]
 [ext_resource path="res://assets/materials/Solid.tres" type="Material" id=3]
-[ext_resource path="res://Water.tscn" type="PackedScene" id=4]
-[ext_resource path="res://levels/Controls.gd" type="Script" id=5]
+[ext_resource path="res://scenes/Water.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scripts/Controls.gd" type="Script" id=5]
 [ext_resource path="res://assets/meshes/Controls.obj" type="ArrayMesh" id=6]
 [ext_resource path="res://assets/materials/Dark.tres" type="Material" id=7]
-[ext_resource path="res://levels/WaterStateControls.gd" type="Script" id=8]
+[ext_resource path="res://scripts/WaterStateControls.gd" type="Script" id=8]
 [ext_resource path="res://assets/meshes/Ice.obj" type="ArrayMesh" id=9]
 [ext_resource path="res://assets/materials/Items.tres" type="Material" id=10]
-[ext_resource path="res://levels/Platform.gd" type="Script" id=11]
+[ext_resource path="res://scripts/Platform.gd" type="Script" id=11]
 [ext_resource path="res://assets/meshes/Platform.obj" type="ArrayMesh" id=12]
-[ext_resource path="res://assets/meshes/Stairs.obj" type="ArrayMesh" id=13]
-[ext_resource path="res://TextButton.tscn" type="PackedScene" id=14]
-[ext_resource path="res://Cupboard.tscn" type="PackedScene" id=15]
+[ext_resource path="res://scenes/TextButton.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scenes/Cupboard.tscn" type="PackedScene" id=14]
+[ext_resource path="res://scenes/Stairs.tscn" type="PackedScene" id=15]
 
 [sub_resource type="ConcavePolygonShape" id=1]
 
 data = PoolVector3Array( 7.2305, -28.0313, 2.8828, 7.3281, -27.8281, -13.0703, 9.0234, -28.1563, 13.6953, 9.0234, -28.1563, 13.6953, 7.3281, -27.8281, -13.0703, 22.4844, -28.25, 22.3594, 22.4844, -28.25, 22.3594, 7.3281, -27.8281, -13.0703, 46.0938, -28.1406, 11.9531, 46.0938, -28.1406, 11.9531, 7.3281, -27.8281, -13.0703, 22.8125, -28.0781, 6.3281, 22.8125, -28.0781, 6.3281, 7.3281, -27.8281, -13.0703, 23.9063, -27.8906, -9.2969, 23.9063, -27.8906, -9.2969, 7.3281, -27.8281, -13.0703, 46.1875, -27.9531, -11.0156, 46.1875, -27.9531, -11.0156, 7.3281, -27.8281, -13.0703, 34.7813, -27.75, -25.3125, 34.7813, -27.75, -25.3125, 7.3281, -27.8281, -13.0703, 4.4375, -27.625, -28.875, 4.4375, -27.625, -28.875, 7.3281, -27.8281, -13.0703, -21.2969, -27.6406, -33.1875, -21.2969, -27.6406, -33.1875, 7.3281, -27.8281, -13.0703, -21.8594, -27.7969, -18.7813, -21.8594, -27.7969, -18.7813, 7.3281, -27.8281, -13.0703, -0.79, -27.7656, -18.3125, -75.875, 34.6875, -0.2544, -73.8125, 34.875, -16.75, -75.875, -6.6133, -0.7266, -75.875, -6.6133, -0.7266, -73.8125, 34.875, -16.75, -73.8125, -6.418, -17.2344, 23.9063, -12.6094, -8.9922, 46.1875, -12.6641, -10.7188, 22.8125, -12.7891, 6.6289, 22.8125, -12.7891, 6.6289, 46.1875, -12.6641, -10.7188, 46.125, -12.8594, 12.2578, 46.125, -12.8594, 12.2578, 46.1875, -12.6641, -10.7188, 111.5, -12.8906, 12.4922, 111.5, -12.8906, 12.4922, 46.1875, -12.6641, -10.7188, 111.562, -12.6953, -10.4844, -72.4375, -6.8125, 15.7813, -36.1563, -6.8125, 14.25, -72.4375, 34.4688, 16.25, -72.4375, 34.4688, 16.25, -36.1563, -6.8125, 14.25, -36.1563, 34.4688, 14.7266, 34.7813, -27.75, -25.3125, 4.4375, -27.625, -28.875, 34.7813, 34.875, -24.4688, 34.7813, 34.875, -24.4688, 4.4375, -27.625, -28.875, 4.4648, 35, -28.0313, 4.4648, 35, -28.0313, 4.4375, -27.625, -28.875, -21.2656, 35, -32.3438, -21.2656, 35, -32.3438, 4.4375, -27.625, -28.875, -21.2813, -6.3008, -32.8125, -21.2813, -6.3008, -32.8125, 4.4375, -27.625, -28.875, -21.2969, -27.6406, -33.1875, -72.4375, 34.4688, 16.25, -36.1563, 34.4688, 14.7266, -75.875, 34.6875, -0.2544, -75.875, 34.6875, -0.2544, -36.1563, 34.4688, 14.7266, -73.8125, 34.875, -16.75, -73.8125, 34.875, -16.75, -36.1563, 34.4688, 14.7266, -37.5625, 34.875, -18.2813, -37.5625, 34.875, -18.2813, -36.1563, 34.4688, 14.7266, -21.2656, 35, -32.3438, -21.2656, 35, -32.3438, -36.1563, 34.4688, 14.7266, 4.4648, 35, -28.0313, 4.4648, 35, -28.0313, -36.1563, 34.4688, 14.7266, 34.7813, 34.875, -24.4688, 34.7813, 34.875, -24.4688, -36.1563, 34.4688, 14.7266, 46.2188, 34.6875, -10.1719, 46.2188, 34.6875, -10.1719, -36.1563, 34.4688, 14.7266, 111.562, 34.6563, -9.9453, 111.562, 34.6563, -9.9453, -36.1563, 34.4688, 14.7266, 111.5, 34.4375, 13.0313, 111.5, 34.4375, 13.0313, -36.1563, 34.4688, 14.7266, 46.125, 34.4688, 12.8047, 46.125, 34.4688, 12.8047, -36.1563, 34.4688, 14.7266, 4.1563, 34.2813, 31.2969, 4.1563, 34.2813, 31.2969, -36.1563, 34.4688, 14.7266, 4.0391, 34, 54.5, 4.0391, 34, 54.5, -36.1563, 34.4688, 14.7266, 1.5078, 33.9375, 60.7813, 1.5078, 33.9375, 60.7813, -36.1563, 34.4688, 14.7266, -18.5, 33.9375, 60.6875, -18.5, 33.9375, 60.6875, -36.1563, 34.4688, 14.7266, -26.25, 34, 54.4375, -26.25, 34, 54.4375, -36.1563, 34.4688, 14.7266, -25.6719, 34.2813, 31.2344, -25.7031, -7.0078, 30.75, -36.1563, -6.8125, 14.25, -21.2813, -6.3008, -32.8125, -21.2813, -6.3008, -32.8125, -36.1563, -6.8125, 14.25, -37.5625, -6.418, -18.75, -37.5625, -6.418, -18.75, -36.1563, -6.8125, 14.25, -73.8125, -6.418, -17.2344, -73.8125, -6.418, -17.2344, -36.1563, -6.8125, 14.25, -75.875, -6.6133, -0.7266, -75.875, -6.6133, -0.7266, -36.1563, -6.8125, 14.25, -72.4375, -6.8125, 15.7813, -18.5156, -0.0027, 60.3125, -26.2656, 0.0732, 54.0313, 1.4922, 0.0033, 60.4063, 1.4922, 0.0033, 60.4063, -26.2656, 0.0732, 54.0313, 4.0234, 0.0773, 54.0938, 4.0234, 0.0773, 54.0938, -26.2656, 0.0732, 54.0313, 4.1445, 0.3542, 30.9063, 4.1445, 0.3542, 30.9063, -26.2656, 0.0732, 54.0313, -25.6875, 0.3501, 30.8438, 1.4922, 0.0033, 60.4063, 1.5078, 33.9375, 60.7813, -18.5156, -0.0027, 60.3125, -18.5156, -0.0027, 60.3125, 1.5078, 33.9375, 60.7813, -18.5, 33.9375, 60.6875, 4.0234, 0.0773, 54.0938, 4.0391, 34, 54.5, 1.4922, 0.0033, 60.4063, 1.4922, 0.0033, 60.4063, 4.0391, 34, 54.5, 1.5078, 33.9375, 60.7813, -18.5156, -0.0027, 60.3125, -18.5, 33.9375, 60.6875, -26.2656, 0.0732, 54.0313, -26.2656, 0.0732, 54.0313, -18.5, 33.9375, 60.6875, -26.25, 34, 54.4375, 4.1445, 0.3542, 30.9063, 4.1563, 34.2813, 31.2969, 4.0234, 0.0773, 54.0938, 4.0234, 0.0773, 54.0938, 4.1563, 34.2813, 31.2969, 4.0391, 34, 54.5, -26.2656, 0.0732, 54.0313, -26.25, 34, 54.4375, -25.6875, 0.3501, 30.8438, -25.6875, 0.3501, 30.8438, -26.25, 34, 54.4375, -25.6719, 34.2813, 31.2344, 4.1367, -13.0625, 30.7656, 14.3047, -13.0078, 26.2813, 4.1445, 0.3542, 30.9063, 4.1445, 0.3542, 30.9063, 14.3047, -13.0078, 26.2813, 4.1563, 34.2813, 31.2969, 4.1563, 34.2813, 31.2969, 14.3047, -13.0078, 26.2813, 46.125, 34.4688, 12.8047, 46.125, 34.4688, 12.8047, 14.3047, -13.0078, 26.2813, 46.125, -12.8594, 12.2578, 46.125, -12.8594, 12.2578, 14.3047, -13.0078, 26.2813, 46.0938, -28.1406, 11.9531, 46.0938, -28.1406, 11.9531, 14.3047, -13.0078, 26.2813, 22.4844, -28.25, 22.3594, 22.4844, -28.25, 22.3594, 14.3047, -13.0078, 26.2813, 22.4844, -71.3125, 22.1875, 22.4844, -71.3125, 22.1875, 14.3047, -13.0078, 26.2813, 14.2969, -71.375, 25.8125, 34.7813, 34.875, -24.4688, 46.2188, 34.6875, -10.1719, 34.7813, -27.75, -25.3125, 34.7813, -27.75, -25.3125, 46.2188, 34.6875, -10.1719, 46.1875, -27.9531, -11.0156, 46.1875, -27.9531, -11.0156, 46.2188, 34.6875, -10.1719, 46.1875, -12.6641, -10.7188, -25.7031, -13.0625, 30.6875, -25.7031, -7.0078, 30.75, -23.5156, -12.8359, 11.9922, -23.5156, -12.8359, 11.9922, -25.7031, -7.0078, 30.75, -23.5313, -71.1875, 11.5234, -23.5313, -71.1875, 11.5234, -25.7031, -7.0078, 30.75, -21.8594, -70.875, -18.9531, -21.8594, -70.875, -18.9531, -25.7031, -7.0078, 30.75, -21.8594, -27.7969, -18.7813, -21.8594, -27.7969, -18.7813, -25.7031, -7.0078, 30.75, -21.2969, -27.6406, -33.1875, -21.2969, -27.6406, -33.1875, -25.7031, -7.0078, 30.75, -21.2813, -6.3008, -32.8125, -72.4375, 34.4688, 16.25, -75.875, 34.6875, -0.2544, -72.4375, -6.8125, 15.7813, -72.4375, -6.8125, 15.7813, -75.875, 34.6875, -0.2544, -75.875, -6.6133, -0.7266, 4.1367, -13.0625, 30.7656, -25.7031, -13.0625, 30.6875, 14.3047, -13.0078, 26.2813, 14.3047, -13.0078, 26.2813, -25.7031, -13.0625, 30.6875, 11.0469, -12.9531, 20.4531, 11.0469, -12.9531, 20.4531, -25.7031, -13.0625, 30.6875, 1.4053, -12.8828, 15.75, 1.4053, -12.8828, 15.75, -25.7031, -13.0625, 30.6875, -23.5156, -12.8359, 11.9922, 22.8125, -28.0781, 6.3281, 22.8125, -12.7891, 6.6289, 46.0938, -28.1406, 11.9531, 46.0938, -28.1406, 11.9531, 22.8125, -12.7891, 6.6289, 46.125, -12.8594, 12.2578, 46.1875, -12.6641, -10.7188, 46.2188, 34.6875, -10.1719, 111.562, -12.6953, -10.4844, 111.562, -12.6953, -10.4844, 46.2188, 34.6875, -10.1719, 111.562, 34.6563, -9.9453, -25.6875, 0.3501, 30.8438, -25.7031, -7.0078, 30.75, 4.1445, 0.3542, 30.9063, 4.1445, 0.3542, 30.9063, -25.7031, -7.0078, 30.75, 4.1367, -13.0625, 30.7656, 4.1367, -13.0625, 30.7656, -25.7031, -7.0078, 30.75, -25.7031, -13.0625, 30.6875, -25.6719, 34.2813, 31.2344, -36.1563, 34.4688, 14.7266, -25.6875, 0.3501, 30.8438, -25.6875, 0.3501, 30.8438, -36.1563, 34.4688, 14.7266, -25.7031, -7.0078, 30.75, -25.7031, -7.0078, 30.75, -36.1563, 34.4688, 14.7266, -36.1563, -6.8125, 14.25, 23.9063, -27.8906, -9.2969, 23.9063, -12.6094, -8.9922, 22.8125, -28.0781, 6.3281, 22.8125, -28.0781, 6.3281, 23.9063, -12.6094, -8.9922, 22.8125, -12.7891, 6.6289, 1.4053, -12.8828, 15.75, -23.5156, -12.8359, 11.9922, 1.3994, -71.25, 15.2813, 1.3994, -71.25, 15.2813, -23.5156, -12.8359, 11.9922, -23.5313, -71.1875, 11.5234, 46.1875, -27.9531, -11.0156, 46.1875, -12.6641, -10.7188, 23.9063, -27.8906, -9.2969, 23.9063, -27.8906, -9.2969, 46.1875, -12.6641, -10.7188, 23.9063, -12.6094, -8.9922, 11.0391, -71.3125, 19.9844, 11.0469, -12.9531, 20.4531, 1.3994, -71.25, 15.2813, 1.3994, -71.25, 15.2813, 11.0469, -12.9531, 20.4531, 1.4053, -12.8828, 15.75, 22.4844, -71.3125, 22.1875, 14.2969, -71.375, 25.8125, 9.0313, -71.25, 13.5313, 9.0313, -71.25, 13.5313, 14.2969, -71.375, 25.8125, 7.2344, -71.125, 2.7148, 7.2344, -71.125, 2.7148, 14.2969, -71.375, 25.8125, 7.332, -70.9375, -13.2344, 7.332, -70.9375, -13.2344, 14.2969, -71.375, 25.8125, -0.7886, -70.875, -18.4844, -0.7886, -70.875, -18.4844, 14.2969, -71.375, 25.8125, -21.8594, -70.875, -18.9531, -21.8594, -70.875, -18.9531, 14.2969, -71.375, 25.8125, -23.5313, -71.1875, 11.5234, -23.5313, -71.1875, 11.5234, 14.2969, -71.375, 25.8125, 1.3994, -71.25, 15.2813, 1.3994, -71.25, 15.2813, 14.2969, -71.375, 25.8125, 11.0391, -71.3125, 19.9844, 7.2344, -71.125, 2.7148, 7.2305, -28.0313, 2.8828, 9.0313, -71.25, 13.5313, 9.0313, -71.25, 13.5313, 7.2305, -28.0313, 2.8828, 9.0234, -28.1563, 13.6953, -0.7886, -70.875, -18.4844, -0.79, -27.7656, -18.3125, 7.332, -70.9375, -13.2344, 7.332, -70.9375, -13.2344, -0.79, -27.7656, -18.3125, 7.3281, -27.8281, -13.0703, 9.0313, -71.25, 13.5313, 9.0234, -28.1563, 13.6953, 22.4844, -71.3125, 22.1875, 22.4844, -71.3125, 22.1875, 9.0234, -28.1563, 13.6953, 22.4844, -28.25, 22.3594, 7.332, -70.9375, -13.2344, 7.3281, -27.8281, -13.0703, 7.2344, -71.125, 2.7148, 7.2344, -71.125, 2.7148, 7.3281, -27.8281, -13.0703, 7.2305, -28.0313, 2.8828, -21.8594, -70.875, -18.9531, -21.8594, -27.7969, -18.7813, -0.7886, -70.875, -18.4844, -0.7886, -70.875, -18.4844, -21.8594, -27.7969, -18.7813, -0.79, -27.7656, -18.3125, 111.562, 34.6563, -9.9453, 111.5, 34.4375, 13.0313, 111.562, -12.6953, -10.4844, 111.562, -12.6953, -10.4844, 111.5, 34.4375, 13.0313, 111.5, -12.8906, 12.4922, -37.5625, 34.875, -18.2813, -21.2656, 35, -32.3438, -37.5625, -6.418, -18.75, -37.5625, -6.418, -18.75, -21.2656, 35, -32.3438, -21.2813, -6.3008, -32.8125, 14.3047, -13.0078, 26.2813, 11.0469, -12.9531, 20.4531, 14.2969, -71.375, 25.8125, 14.2969, -71.375, 25.8125, 11.0469, -12.9531, 20.4531, 11.0391, -71.3125, 19.9844, -73.8125, 34.875, -16.75, -37.5625, 34.875, -18.2813, -73.8125, -6.418, -17.2344, -73.8125, -6.418, -17.2344, -37.5625, 34.875, -18.2813, -37.5625, -6.418, -18.75, 111.5, 34.4375, 13.0313, 46.125, 34.4688, 12.8047, 111.5, -12.8906, 12.4922, 111.5, -12.8906, 12.4922, 46.125, 34.4688, 12.8047, 46.125, -12.8594, 12.2578 )
 
-[sub_resource type="CubeMesh" id=3]
+[sub_resource type="CubeMesh" id=2]
 
 custom_aabb = AABB( 0, 0, 0, 0, 0, 0 )
 size = Vector3( 0.5, 0.5, 0.5 )
@@ -28,7 +28,7 @@ subdivide_width = 0
 subdivide_height = 0
 subdivide_depth = 0
 
-[sub_resource type="Animation" id=4]
+[sub_resource type="Animation" id=3]
 
 resource_name = "touch"
 length = 1.0
@@ -59,11 +59,11 @@ tracks/1/keys = {
 "values": [ Vector3( 0, 43.1881, 0 ), Vector3( 0, -14.1168, 0 ) ]
 }
 
-[sub_resource type="BoxShape" id=5]
+[sub_resource type="BoxShape" id=4]
 
 extents = Vector3( 4, 8, 4 )
 
-[sub_resource type="Animation" id=6]
+[sub_resource type="Animation" id=5]
 
 resource_name = "touch"
 length = 1.0
@@ -91,10 +91,10 @@ tracks/1/keys = {
 "times": PoolRealArray( 0, 1 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ Vector3( 114.533, 84.4698, 91.3831 ), Vector3( 88.3604, 84.7651, 91.3831 ) ]
+"values": [ Vector3( 126.997, 86.4408, 89.2346 ), Vector3( 75.3382, 88.6832, 89.2346 ) ]
 }
 
-[sub_resource type="Animation" id=7]
+[sub_resource type="Animation" id=6]
 
 resource_name = "rotate"
 length = 4.0
@@ -113,7 +113,7 @@ tracks/0/keys = {
 "values": [ Vector3( 90, 0, 0 ), Vector3( 90, 0, 360 ) ]
 }
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=7]
 
 resource_name = "rotate"
 length = 1.0
@@ -132,7 +132,7 @@ tracks/0/keys = {
 "values": [ Vector3( 0, 0, 0 ), Vector3( -18.5878, -55.1897, -42.69 ), Vector3( 18.5878, 185.19, -42.69 ), Vector3( -18.5878, -55.1897, -42.69 ), Vector3( 0, 0, 0 ) ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=8]
 
 resource_name = "touch"
 length = 1.0
@@ -151,19 +151,11 @@ tracks/0/keys = {
 "values": [ Vector3( -20.3556, 101.857, 155.395 ), Vector3( -20.3556, 101.857, 44.3923 ) ]
 }
 
-[sub_resource type="ConvexPolygonShape" id=10]
+[sub_resource type="ConvexPolygonShape" id=9]
 
 points = PoolVector3Array( 1, -0.0794067, 1, 1, -0.0794067, -1, 0.660156, -0.148438, 0.660156, 0.660156, -0.148438, -0.660156, 1, 0.0794067, -1, 0.999512, 0.0794067, 1, 0.930664, 0.148438, -0.930664, 0.930664, 0.148438, 0.930664, 1, 0.0794067, -1, 1, -0.0794067, -1, 0.999512, 0.0794067, 1, 1, -0.0794067, 1, 0.999512, 0.0794067, 1, 1, -0.0794067, 1, -1, 0.0794067, 1, -1, -0.0794067, 1, -1, 0.0794067, 1, -1, -0.0794067, 1, -1, 0.0794067, -1, -1, -0.0794067, -1, 1, -0.0794067, -1, 1, 0.0794067, -1, -1, -0.0794067, -1, -1, 0.0794067, -1, 0.930664, 0.148438, 0.930664, -0.930664, 0.148438, 0.930664, 0.781738, 0.103333, 0.781738, -0.781738, 0.103333, 0.781738, -1, 0.0794067, 1, -1, 0.0794067, -1, -0.930664, 0.148438, 0.930664, -0.930664, 0.148438, -0.930664, -1, 0.0794067, -1, 1, 0.0794067, -1, -0.930664, 0.148438, -0.930664, 0.930664, 0.148438, -0.930664, 0.999512, 0.0794067, 1, -1, 0.0794067, 1, 0.930664, 0.148438, 0.930664, -0.930664, 0.148438, 0.930664, 0.660156, -0.148438, 0.660156, 0.660156, -0.148438, -0.660156, -0.660156, -0.148438, 0.660156, -0.660156, -0.148438, -0.660156, -1, -0.0794067, -1, -1, -0.0794067, 1, -0.660156, -0.148438, -0.660156, -0.660156, -0.148438, 0.660156, -1, -0.0794067, 1, 1, -0.0794067, 1, -0.660156, -0.148438, 0.660156, 0.660156, -0.148438, 0.660156, 1, -0.0794067, -1, -1, -0.0794067, -1, 0.660156, -0.148438, -0.660156, -0.660156, -0.148438, -0.660156, 0.930664, 0.148438, -0.930664, 0.930664, 0.148438, 0.930664, 0.781738, 0.103333, -0.781738, 0.781738, 0.103333, 0.781738, -0.930664, 0.148438, 0.930664, -0.930664, 0.148438, -0.930664, -0.781738, 0.103333, 0.781738, -0.781738, 0.103333, -0.781738, -0.930664, 0.148438, -0.930664, 0.930664, 0.148438, -0.930664, -0.781738, 0.103333, -0.781738, 0.781738, 0.103333, -0.781738, -0.781738, 0.103333, -0.781738, 0.781738, 0.103333, -0.781738, -0.781738, 0.103333, 0.781738, 0.781738, 0.103333, 0.781738 )
 
-[sub_resource type="ConvexPolygonShape" id=11]
-
-points = PoolVector3Array( 1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1 )
-
-[sub_resource type="ConvexPolygonShape" id=12]
-
-points = PoolVector3Array( 1, 1, 1, 1, -1, 1, -1, 1, 1, -1, -1, 1, 1, -1, -1, -1, -1, -1, 1, -1, 1, -1, -1, 1, 1, 1, 1, -1, 1, 1, 1, -1, -1, -1, -1, -1, -1, 1, 1, -1, -1, 1, -1, -1, -1, 1, 1, 1, 1, -1, -1, 1, -1, 1 )
-
-[sub_resource type="Environment" id=13]
+[sub_resource type="Environment" id=10]
 
 background_mode = 0
 background_sky_custom_fov = 0.0
@@ -245,8 +237,8 @@ adjustment_saturation = 1.0
 
 [node name="Player" parent="." index="0" instance=ExtResource( 1 )]
 
-transform = Transform( 1, 0, 0, 0, 0.999957, 0.00924298, 0, -0.00924298, 0.999957, 17.3653, 157.493, -339.61 )
-_sections_unfolded = [ "Axis Lock", "Collision" ]
+transform = Transform( 1, 0, 0, 0, 0.999957, 0.00924298, 0, -0.00924298, 0.999957, 17.3653, 154.573, -339.61 )
+_sections_unfolded = [ "Axis Lock", "Collision", "Pause", "Transform", "Visibility" ]
 
 [node name="Level" type="MeshInstance" parent="." index="1"]
 
@@ -347,7 +339,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 3 )
+mesh = SubResource( 2 )
 skeleton = NodePath("..")
 material/0 = null
 _sections_unfolded = [ "Transform", "material" ]
@@ -359,18 +351,17 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/touch = SubResource( 4 )
+anims/touch = SubResource( 3 )
 blend_times = [  ]
 
 [node name="CollisionShape" type="CollisionShape" parent="WaterLevelControls" index="3"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.67572e-06, 8.32082, 4.76837e-06 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 disabled = true
 
 [node name="WaterLevelControls2" type="RigidBody" parent="." index="4"]
 
-editor/display_folded = true
 transform = Transform( -0.999959, 0, 0.00901487, 0, 1, 0, -0.00901487, 0, -0.999959, -38.1644, 75.0679, 229.687 )
 input_ray_pickable = true
 input_capture_on_drag = false
@@ -430,7 +421,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 3 )
+mesh = SubResource( 2 )
 skeleton = NodePath("..")
 material/0 = null
 _sections_unfolded = [ "Transform" ]
@@ -442,17 +433,18 @@ autoplay = ""
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/touch = SubResource( 6 )
+anims/touch = SubResource( 5 )
 blend_times = [  ]
 
 [node name="CollisionShape" type="CollisionShape" parent="WaterLevelControls2" index="3"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.67572e-06, 8.32082, 4.76837e-06 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 disabled = true
 
 [node name="WaterStateControls" type="RigidBody" parent="." index="5"]
 
+editor/display_folded = true
 transform = Transform( -0.208779, 0, -0.977963, 0, 1, 0, 0.977963, 0, -0.208779, 72.2595, 49.8332, 36.5439 )
 input_ray_pickable = true
 input_capture_on_drag = false
@@ -525,14 +517,14 @@ autoplay = "rotate"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/rotate = SubResource( 7 )
+anims/rotate = SubResource( 6 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
 
 [node name="CollisionShape" type="CollisionShape" parent="WaterStateControls" index="3"]
 
 transform = Transform( 0.324488, 0, 0.94589, 0, 1, 0, -0.94589, 0, 0.324488, 9.53674e-06, 8.32082, 7.62939e-06 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 disabled = true
 
 [node name="PlatformCreationControls" type="RigidBody" parent="." index="6"]
@@ -597,7 +589,7 @@ lod_min_distance = 0.0
 lod_min_hysteresis = 0.0
 lod_max_distance = 0.0
 lod_max_hysteresis = 0.0
-mesh = SubResource( 3 )
+mesh = SubResource( 2 )
 skeleton = NodePath("..")
 material/0 = null
 _sections_unfolded = [ "Transform" ]
@@ -609,15 +601,15 @@ autoplay = "rotate"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/rotate = SubResource( 8 )
-anims/touch = SubResource( 9 )
+anims/rotate = SubResource( 7 )
+anims/touch = SubResource( 8 )
 blend_times = [  ]
 _sections_unfolded = [ "Playback Options" ]
 
 [node name="CollisionShape" type="CollisionShape" parent="PlatformCreationControls" index="3"]
 
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.67572e-06, 8.32082, 4.76837e-06 )
-shape = SubResource( 5 )
+shape = SubResource( 4 )
 disabled = true
 
 [node name="Platforms" type="Spatial" parent="." index="7"]
@@ -678,7 +670,7 @@ _sections_unfolded = [ "Transform", "material" ]
 [node name="CollisionShape" type="CollisionShape" parent="Platforms/Platform" index="1"]
 
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 0 )
-shape = SubResource( 10 )
+shape = SubResource( 9 )
 disabled = false
 _sections_unfolded = [ "Transform" ]
 
@@ -734,114 +726,53 @@ _sections_unfolded = [ "Transform", "material" ]
 [node name="CollisionShape" type="CollisionShape" parent="Platforms/Platform2" index="1"]
 
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0, 6.55651e-07 )
-shape = SubResource( 10 )
+shape = SubResource( 9 )
 disabled = false
 _sections_unfolded = [ "Transform" ]
 
-[node name="Stairs" type="MeshInstance" parent="." index="8"]
-
-editor/display_folded = true
-transform = Transform( 11.8357, -0.147655, -1.97372, 0.144392, 11.9991, -0.0317934, 1.97396, 0.00760887, 11.8365, 45.8247, 62.0897, 142.731 )
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
-mesh = ExtResource( 13 )
-skeleton = NodePath("..")
-material/0 = null
-_sections_unfolded = [ "Transform" ]
-
-[node name="StaticBody" type="StaticBody" parent="Stairs" index="0"]
-
-editor/display_folded = true
-input_ray_pickable = true
-input_capture_on_drag = false
-collision_layer = 1
-collision_mask = 1
-friction = 1.0
-bounce = 0.0
-constant_linear_velocity = Vector3( 0, 0, 0 )
-constant_angular_velocity = Vector3( 0, 0, 0 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Stairs/StaticBody" index="0"]
-
-shape = SubResource( 11 )
-disabled = false
-
-[node name="Stairs2" type="MeshInstance" parent="." index="9"]
-
-editor/display_folded = true
-transform = Transform( 1.68997, 0.0111425, 11.8804, -0.00550483, 12, -0.0104716, -11.8804, -0.00397524, 1.68998, 114.533, 84.4698, 91.3831 )
-layers = 1
-material_override = null
-cast_shadow = 1
-extra_cull_margin = 0.0
-use_in_baked_light = false
-lod_min_distance = 0.0
-lod_min_hysteresis = 0.0
-lod_max_distance = 0.0
-lod_max_hysteresis = 0.0
-mesh = ExtResource( 13 )
-skeleton = NodePath("..")
-material/0 = null
-_sections_unfolded = [ "Transform" ]
-
-[node name="StaticBody" type="StaticBody" parent="Stairs2" index="0"]
-
-input_ray_pickable = true
-input_capture_on_drag = false
-collision_layer = 1
-collision_mask = 1
-friction = 1.0
-bounce = 0.0
-constant_linear_velocity = Vector3( 0, 0, 0 )
-constant_angular_velocity = Vector3( 0, 0, 0 )
-
-[node name="CollisionShape" type="CollisionShape" parent="Stairs2/StaticBody" index="0"]
-
-shape = SubResource( 12 )
-disabled = false
-
-[node name="Button1" parent="." index="10" instance=ExtResource( 14 )]
+[node name="Button1" parent="." index="8" instance=ExtResource( 13 )]
 
 transform = Transform( -0.11275, -0.00091879, -0.993623, -0.000458736, 1, -0.000872632, 0.993623, 0.000357421, -0.11275, 12.7964, 48.7726, -247.462 )
 text = "Welcome !"
 
-[node name="Button2" parent="." index="11" instance=ExtResource( 14 )]
+[node name="Button2" parent="." index="9" instance=ExtResource( 13 )]
 
 transform = Transform( -0.120749, -0.000921639, -0.992683, -0.000458736, 1, -0.000872632, 0.992683, 0.00035001, -0.120749, 1.50399, 48.7726, -173.102 )
 text = "Keep going until you see the pedestal
 "
 
-[node name="Button3" parent="." index="12" instance=ExtResource( 14 )]
+[node name="Button3" parent="." index="10" instance=ExtResource( 13 )]
 
 transform = Transform( -0.11275, -0.00091879, -0.993623, -0.000458736, 1, -0.000872632, 0.993623, 0.000357421, -0.11275, -6.69466, 48.7726, -98.6592 )
 text = "You should click-it !
 
 "
 
-[node name="Button5" parent="." index="13" instance=ExtResource( 14 )]
+[node name="Button5" parent="." index="11" instance=ExtResource( 13 )]
 
 transform = Transform( -0.11275, -0.00091879, -0.993623, -0.000458736, 1, -0.000872632, 0.993623, 0.000357421, -0.11275, 131.588, 100.082, 95.2709 )
 text = "You can enter the cupboard"
 
-[node name="Button6" parent="." index="14" instance=ExtResource( 14 )]
+[node name="Button6" parent="." index="12" instance=ExtResource( 13 )]
 
 transform = Transform( -0.161283, -0.000935194, -0.986908, -0.000458736, 1, -0.000872632, 0.986908, 0.000311989, -0.161283, 202.116, 99.3776, 101.533 )
 scene = "res://levels/End.tscn"
 
-[node name="Cupboard" parent="." index="15" instance=ExtResource( 15 )]
+[node name="Cupboard" parent="." index="13" instance=ExtResource( 14 )]
 
 transform = Transform( -0.993069, 0, 0.117533, 0, 1, 0, -0.117533, 0, -0.993069, 177.652, 127.283, 98.8181 )
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="16"]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." index="14"]
 
-environment = SubResource( 13 )
+environment = SubResource( 10 )
+
+[node name="Stairs" parent="." index="15" instance=ExtResource( 15 )]
+
+transform = Transform( -3.45624, 0.99773, -11.8329, 12, 10.3923, 0, 20.4952, -5.91646, -1.99546, 52.439, 59.934, 128.937 )
+
+[node name="Stairs2" parent="." index="16" instance=ExtResource( 15 )]
+
+transform = Transform( 20.7017, -5.97608, -1.07048, 12, 10.3923, 0, 1.85413, -0.535242, 11.9522, 126.997, 86.4408, 89.2346 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="." index="17"]
 
@@ -871,3 +802,4 @@ directional_shadow_depth_range = 0
 directional_shadow_max_distance = 200.0
 
 
+[editable path="Water"]

@@ -1,15 +1,17 @@
 [gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://Main_Menu.gd" type="Script" id=1]
+[ext_resource path="res://scripts/Main_Menu.gd" type="Script" id=1]
 [ext_resource path="res://assets/Titillium-Regular.otf" type="DynamicFontData" id=2]
-[ext_resource path="res://Font.tres" type="DynamicFont" id=3]
+[ext_resource path="res://assets/Font.tres" type="DynamicFont" id=3]
 [ext_resource path="res://assets/meshes/Ice.obj" type="ArrayMesh" id=4]
 [ext_resource path="res://assets/materials/Items.tres" type="Material" id=5]
 [ext_resource path="res://assets/meshes/Level.obj" type="ArrayMesh" id=6]
 [ext_resource path="res://assets/materials/Solid.tres" type="Material" id=7]
 [ext_resource path="res://assets/meshes/Water.obj" type="ArrayMesh" id=8]
 
-[sub_resource type="DynamicFont" id=6]
+
+
+[sub_resource type="DynamicFont" id=1]
 
 size = 32
 use_mipmaps = false
@@ -17,7 +19,7 @@ use_filter = false
 font_data = ExtResource( 2 )
 _sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
-[sub_resource type="ProceduralSky" id=4]
+[sub_resource type="ProceduralSky" id=2]
 
 radiance_size = 4
 sky_top_color = Color( 0.0470588, 0.454902, 0.976471, 1 )
@@ -38,10 +40,10 @@ sun_energy = 16.0
 texture_size = 2
 _sections_unfolded = [ "Ground", "Sky" ]
 
-[sub_resource type="Environment" id=5]
+[sub_resource type="Environment" id=3]
 
 background_mode = 2
-background_sky = SubResource( 4 )
+background_sky = SubResource( 2 )
 background_sky_custom_fov = 0.0
 background_color = Color( 0, 0, 0, 1 )
 background_energy = 1.0
@@ -118,9 +120,8 @@ adjustment_contrast = 1.0
 adjustment_saturation = 1.0
 _sections_unfolded = [ "Background" ]
 
-[sub_resource type="Animation" id=3]
+[sub_resource type="Animation" id=4]
 
-resource_name = "rotate"
 length = 4.0
 loop = true
 step = 0.1
@@ -149,7 +150,7 @@ tracks/1/keys = {
 "values": [ Vector3( 0, 0, 45 ), Vector3( 0, 0, 225 ), Vector3( 0, 0, 405 ) ]
 }
 
-[node name="Main_Menu" type="Control" index="0"]
+[node name="Main_Menu" type="Control"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -182,7 +183,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 1 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -209,7 +210,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 1 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -236,7 +237,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 1 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -263,7 +264,7 @@ mouse_filter = 0
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 1 )
 toggle_mode = false
 enabled_focus_mode = 2
 shortcut = null
@@ -301,7 +302,7 @@ _sections_unfolded = [ "Anchor", "Focus", "Hint", "Margin", "Mouse", "Size Flags
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, 1, 0, -1, -1.62921e-07, -0.311322, 5.82135, 0 )
 keep_aspect = 1
 cull_mask = 1048575
-environment = SubResource( 5 )
+environment = SubResource( 3 )
 h_offset = 0.0
 v_offset = 0.0
 doppler_tracking = 0
@@ -371,7 +372,7 @@ autoplay = "rotate"
 playback_process_mode = 1
 playback_default_blend_time = 0.0
 playback_speed = 1.0
-anims/rotate = SubResource( 3 )
+anims/rotate = SubResource( 4 )
 blend_times = [  ]
 
 [node name="DirectionalLight" type="DirectionalLight" parent="." index="9"]
